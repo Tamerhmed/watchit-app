@@ -1,9 +1,11 @@
-import React from 'react';
+import Movie from './Movie';
 
-export default function MovieList() {
+export default function MovieList({ movies }) {
   return (
     <ul className='list'>
-      <li>movie list</li>
+      {movies?.map((movie) => (
+        <Movie movie={movie} key={movie.imdbID} />
+      ))}
     </ul>
   );
 }
